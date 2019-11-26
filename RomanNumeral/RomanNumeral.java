@@ -25,12 +25,12 @@ public class RomanNumeral {
 						if(letra==Rom[j]) {
 							value = val[j];
 							if(ant < val[j]){                     //si anterior menor al actual, resto el actual menos el ant
-		                    	suma = value - ant ;              
-		                        ant = val[j];                	 // ant apunta al actual 
-		                   }else {                            		 
-		                        ant = val[j];                    // si ant NO es menor al actual, todo normal
-		                        suma = suma + value;
-		                   }              
+		                    				suma = value - ant ;              
+		                        			ant = val[j];                	 // ant apunta al actual 
+		                   			}else {                            		 
+		                        			ant = val[j];                    // si ant NO es menor al actual, todo normal
+		                        			suma = suma + value;
+		                   			}              
 						}
 					}
 				}
