@@ -10,7 +10,7 @@ public class RomanNumeral {
 		public static int convierte(String s){
 			char Rom[]= {' ', 'I', 'V', 'X', 'L', 'C', 'D', 'M'};
 			int val[]= {0, 1, 5, 10, 50, 100, 500, 1000};
-			// charAt(int index) -> devuelve el carácter situaso en la posición index pasada por parámetro
+			// charAt(int index) -> devuelve el carácter situado en la posición index pasada por parámetro
 			char letra=' ';
 			int value = 0;
 			int suma = 0;
