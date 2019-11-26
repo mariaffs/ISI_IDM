@@ -39,12 +39,12 @@ public class RomanNumeral {
 		}
 		
 		public static void main(String[] args) {
-			System.out.println(convierte("V"));
-			System.out.println(convierte("D"));
-			System.out.println(convierte("XV"));
-			System.out.println(convierte("MMXV"));
-			System.out.println(convierte("IV"));
-			System.out.println(convierte("IX")); 
+			//System.out.println(convierte("V"));
+			//System.out.println(convierte("D"));
+			//System.out.println(convierte("XV"));
+			//System.out.println(convierte("MMXV"));
+			//System.out.println(convierte("IV"));
+			//System.out.println(convierte("IX")); 
 			
 		}
 	}
