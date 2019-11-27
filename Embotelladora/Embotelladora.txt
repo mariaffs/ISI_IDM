@@ -1,0 +1,50 @@
+
+--------------------------------------------EMBOTELLADORA---------------------------------------------
+
+1. Identifica el Software Under Test.
+
+2. Identifica los parámetros del SUT.
+
+3. Utilizando la técnica de la modelización de las entradas, crear caracterizaciones basadas en la funcionalidad y sus particiones en bloques.
+
+4. Elegir valores adecuados de cada bloque que satisfagan alguno de los criterios de cobertura "razonables" vistos en clase, prestando atención a los casos frontera que pueda haber en cada caso a la hora de elegir valores concretos para los test.
+
+5. Escribir el código de pruebas JUnit, antes de escribir el código SUT.
+
+6. Escribir el código del SUT y mejorarlo hasta que pase todas las pruebas.
+
+7. Utilizad los tests que habéis desarrollado para descubrir fallos en las implementaciones del SUT de otras parejas de compañeros. 
+
+------------------------------------------------------------------------------------------------------
+
+1. Embotellar cantidad deseada con las botellas disponibles. Primero embotellar en las de 5L (grandes). Devuelve el número de botellas de 1L (pequenas) necesarias para embotellar el resto.
+
+public class Embotelladora{
+	//	@param 	pequenas: número de botellas en almacén de 1L
+	//	@param 	grandes: número de botellas en almacén de 5L
+	//	@param 	total: número total de litros que hay que embotellar
+	// 	@return	número de botellas pequeñas necesarias para embotellar el total de lı́quido, teniendo
+	//			en cuenta que hay que minimizar el número de botellas pequeñas: primero
+	//			se rellenan las grandes
+	// 	@throws	Eleva la excepción NoSolution si no es posible embotellar todo el lı́quido
+	
+	public int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution{
+
+
+2. int pequenas -> botellas de 1L disponibles
+   int grandes -> botellas de 5L disponibles
+   int total -> litros para embotellar
+
+3. C1 -> resto < pequenas, resto = pequenas o resto > pequenas ?
+	c1.b1 -> lo que me falta por embotellar es menor a las pequenas que tengo
+	c1.b2 -> lo que me falta por embotellar es igual a las pequenas que tengo
+	c1.b3 -> Exception -> lo que me falta por embotellar es mayor a las pequenas que tengo
+
+4. C1 ->
+	c1b1 -> (2, 5, 10) -> lo que tengo que embotellar es mayor al número de botellas de pequenas que tengo
+	c1b2 -> (8, 5, 10) -> lo que tengo que embotellar es igual al número de botellas pequenas que tengo
+	c1b3 -> (12, 5, 10) -> lo que tengo que embotellar es menor al número de botellas pequenas que tengo
+
+5. EmbotelladoraTest.java
+
+6. Embotelladora.java
