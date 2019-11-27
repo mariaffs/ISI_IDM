@@ -1,0 +1,50 @@
+
+--------------------------------------------BLACK FRIDAY---------------------------------------------
+
+1. Identifica el Software Under Test.
+
+2. Identifica los parámetros del SUT.
+
+3. Utilizando la técnica de la modelización de las entradas, crear caracterizaciones basadas en la funcionalidad y sus particiones en bloques.
+
+4. Elegir valores adecuados de cada bloque que satisfagan alguno de los criterios de cobertura "razonables" vistos en clase, prestando atención a los casos frontera que pueda haber en cada caso a la hora de elegir valores concretos para los test.
+
+5. Escribir el código de pruebas JUnit, antes de escribir el código SUT.
+
+6. Escribir el código del SUT y mejorarlo hasta que pase todas las pruebas.
+
+------------------------------------------------------------------------------------------------------
+
+1. Si es 'BlackFriday', se aplica descuento al precio original y se devuelve el precio con el descuento. Si no es BlackFriday, se devuelve el precio original.
+
+public class BlackFriday{
+	// 	@param	precioOriginal es el precio de un producto marcado en la etiqueta
+	//	@param	porcentajeDescuento es el descuento a aplicar expresado como un porcentaje
+	//	@return	el precio final teniendo en cuenta que si es black friday (29 de noviembre) se aplica
+	//			un descuento de porcentajeDescuento
+	// 	@throws	Eleva la excepción InvalidParameter si precioOriginal es negativo
+	
+	public double precioFinal (double precioOriginal, double porcentajeDescuento) throws InvalidParameterException{
+
+2. double precioOriginal -> precio del producto sin descuento
+   double porcentajeDescuento -> porcentaje aplicable en 'BlackFriday'
+
+3. C1 -> si el precio original es < 0
+	c1.b1 = true
+	c1.b2 = false
+
+   C2 -> si es 'BlackFriday'
+	c2.b1 = true
+	c2.b2 = false
+
+4. C1 ->
+	c1b2 -> (100,0.85) -> Precio válido, NO es menor que 0
+	c1b1 -> (-100,0.85) -> Exception -> Precio No válido, menor que 0
+
+   C2 ->
+	c2b1 -> (100,0.85) -> valor esperado precio con descuento
+	c2b2 -> (100,0.85) -> valor esperado precio sin descuento
+
+5. BlackFridayTest.java
+
+6. BlackFriday.java
