@@ -41,9 +41,9 @@ public class Embotelladora{
 	c1.b3 -> Exception -> lo que me falta por embotellar es mayor a las pequenas que tengo
 
 4. C1 ->
-	c1b1 -> (2, 5, 10) -> lo que tengo que embotellar es mayor al número de botellas de pequenas que tengo
-	c1b2 -> (8, 5, 10) -> lo que tengo que embotellar es igual al número de botellas pequenas que tengo
-	c1b3 -> (12, 5, 10) -> lo que tengo que embotellar es menor al número de botellas pequenas que tengo
+	c1b3 -> (1, 5, 12) -> lo que tengo que embotellar es mayor al número de botellas de pequenas que tengo
+	c1b2 -> (2, 5, 12) -> lo que tengo que embotellar es igual al número de botellas pequenas que tengo
+	c1b1 -> (12, 5, 11) -> lo que tengo que embotellar es menor al número de botellas pequenas que tengo
 
 5. EmbotelladoraTest.java
 

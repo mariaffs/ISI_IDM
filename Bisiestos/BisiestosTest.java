@@ -12,13 +12,13 @@ public class BisiestosTest
 {
   public static class NotParameterizedPart{
      // Test de Interfaz
-   @Test (expected = InvalidParameterException.class) public void YearZero()
+   @Test (expected = InvalidParameter.class) public void YearZero()
    {
       int año = 0;
       Bisiestos.esBisiesto(año);
    }
 
-   @Test (expected = InvalidParameterException.class) public void NegativeYear()
+   @Test (expected = InvalidParameter.class) public void NegativeYear()
    {
       int año = -1;
       Bisiestos.esBisiesto(año);

@@ -1,3 +1,5 @@
+package Embotelladora;
+
 public class Embotelladora{
 	//	@param 	pequenas: número de botellas en almacén de 1L
 	//	@param 	grandes: número de botellas en almacén de 5L
@@ -9,7 +11,15 @@ public class Embotelladora{
 	
 	public int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution{
 		int resto;
-		resto = total - (total/grandes);
+		int n;
+		
+		n = total/5; // número botellas grandes que necesito
+		if(n>grandes) {
+			resto = total - 5*grandes;
+		}else {
+			resto = total - 5*n;
+		}
+		
 		if(resto <= pequenas){
 			return resto;
 		}else{

@@ -17,7 +17,7 @@
 
 1. Si es 'BlackFriday', se aplica descuento al precio original y se devuelve el precio con el descuento. Si no es BlackFriday, se devuelve el precio original.
 
-public class BlackFriday{
+public class DescuentoBlackFriday{
 	// 	@param	precioOriginal es el precio de un producto marcado en la etiqueta
 	//	@param	porcentajeDescuento es el descuento a aplicar expresado como un porcentaje
 	//	@return	el precio final teniendo en cuenta que si es black friday (29 de noviembre) se aplica
@@ -39,12 +39,12 @@ public class BlackFriday{
 
 4. C1 ->
 	c1b2 -> (100,0.85) -> Precio válido, NO es menor que 0
-	c1b1 -> (-100,0.85) -> Exception -> Precio No válido, menor que 0
+	c1b1 -> (-100,0.85) -> Exception -> Precio No válido, es menor que 0
 
    C2 ->
 	c2b1 -> (100,0.85) -> valor esperado precio con descuento
 	c2b2 -> (100,0.85) -> valor esperado precio sin descuento
 
-5. BlackFridayTest.java
+5. DescuentoBlackFridayTest.java
 
-6. BlackFriday.java
+6. DescuentoBlackFriday.java

@@ -1,8 +1,4 @@
-package BlackFriday;
-
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+package DescuentoBlackFriday;
 
 import static org.junit.Assert.*;
 
@@ -18,7 +14,7 @@ import junit.framework.JUnit4TestAdapter;
 
 // This section declares all of the test classes in the program.
 @RunWith (Suite.class)
-@Suite.SuiteClasses ({ BlackFridayTest.class })  // Add test classes here.
+@Suite.SuiteClasses ({ DescuentoBlackFridayTest.class })  // Add test classes here.
 
 public class AllTests
 {

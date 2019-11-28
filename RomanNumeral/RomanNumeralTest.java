@@ -12,37 +12,37 @@ public class RomanNumeralTest
 {
   public static class NotParameterizedPart{
      // Test de Interfaz
-   @Test (expected = InvalidParameterException.class) public void NotRomanString()
+   @Test (expected = InvalidParameter.class) public void NotRomanString()
    {
       String str = "abc";
       RomanNumeral.convierte(str);
    }
-   @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber()
+   @Test (expected = InvalidParameter.class) public void InvalidRomanNumber()
    {
       String str = "XXXX";
       RomanNumeral.convierte(str);
     }
-    @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber2()
+    @Test (expected = InvalidParameter.class) public void InvalidRomanNumber2()
     {
        String str = "XXXIXX";
        RomanNumeral.convierte(str);
      }
-     @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber3()
+     @Test (expected = InvalidParameter.class) public void InvalidRomanNumber3()
      {
         String str = "IXX";
         RomanNumeral.convierte(str);
       }
-      @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber4()
+      @Test (expected = InvalidParameter.class) public void InvalidRomanNumber4()
       {
          String str = "IIV";
          RomanNumeral.convierte(str);
        }
-       @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber5()
+       @Test (expected = InvalidParameter.class) public void InvalidRomanNumber5()
        {
           String str = "IVI";
           RomanNumeral.convierte(str);
         }
-        @Test (expected = InvalidParameterException.class) public void InvalidRomanNumber6()
+        @Test (expected = InvalidParameter.class) public void InvalidRomanNumber6()
         {
            String str = "LXL";
            RomanNumeral.convierte(str);

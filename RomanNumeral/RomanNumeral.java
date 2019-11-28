@@ -1,4 +1,3 @@
-import java.security.InvalidParameterException;
 
 public class RomanNumeral {
 
@@ -8,7 +7,7 @@ public class RomanNumeral {
 		//	@return: 	el número s en base 10
 		//	@throws:	Eleva la excepción InvalidParameter si s no es número rumano
 
-		public static int convierte(String s){
+		public static int convierte(String s) throws InvalidParameter{
 			// charAt(int index) -> devuelve el carácter situado en la posición index pasada por parámetro
 			char letra= ' ';
 			int value = 0;
@@ -16,7 +15,7 @@ public class RomanNumeral {
 			int ant = 0;
 
 			if(!romanAnalyzer(s)){
-				throw new InvalidParameterException("Número romano inexistente");
+				throw new InvalidParameter();
 			}
 			for(int y=0; y<s.length();y++) {
 				letra = s.charAt(y);
@@ -56,7 +55,6 @@ public class RomanNumeral {
 					if(pos == -1){
 						return false;
 					}
-					System.out.print(c);
 					if(i > 0){
 						if(prevpos%2 == 1 && prevpos<=pos){
 									return false;
@@ -93,7 +91,6 @@ public class RomanNumeral {
 					anterior = prevpos;
 					prevpos = pos;
 			}
-			System.out.println("");
 			return true;
 		}
 		public static void main(String[] args) {
