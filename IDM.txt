@@ -165,7 +165,7 @@ public class DescuentoBlackFriday{
 6. DescuentoBlackFriday.java
 
 -----------------------------------------------------------------------------------------------------
-7. Hemos pasado nuestros Test al dos grupos:
+7. Hemos pasado nuestros Test a dos grupos:
  	Daniel Arévalo, Ismaél González (https://github.com/ismagt/Practica_IDM_ISI);
 	Adrián Riao Monsalve, Javier Jesús Bravo (https://github.com/JavierBravoDonaire/Practica_ISI_IDM);
 
