@@ -27,11 +27,11 @@ El único parámetro con el que tenemos que trabajar es con s, que es un string.
   * c1.b12 -> C - CIX
   * c1.b13 -> CX - CCCXCIX
   * c1.b14 -> CD - CDXCIX
-  * c1.b15 -> D
+  * c1.b15 -> D - DXCIX
   * c1.b16 -> DC - DCCCXCIX
   * c1.b17 -> CM - CMXCIX
   * c1.b18 -> M - MXCIX
-  * c1.b19 -> > MC
+  * c1.b19 -> MC - MMMCDXCIX
 
 (Incluiremos también un test basado en la interfaz para probar si el parámetro que te introducen es válido o no)
 
@@ -41,4 +41,4 @@ Usaremos para cada uno de los tests anteriores el mayor de los dos rangos por se
 
 c1.b16 -> DCCCXCIX
 
-**5. 6. 7. Realizadas con BisiestosTests.java**
+**5. 6. 7. Realizadas con RomanNumeralTest.java**

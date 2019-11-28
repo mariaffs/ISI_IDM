@@ -1,51 +1,102 @@
-package RomanNumeral;
-
 import java.security.InvalidParameterException;
 
 public class RomanNumeral {
-		//Parámetro: s es un número romano
-		//Devuelve: el número s en base 10
-		//Eleva la excepción InvalidParameter si s no es número rumano
+
+		static final char Rom[]= {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+		static final int val[]= {1, 5, 10, 50, 100, 500, 1000};
+		// 	@param: 	s es un número romano
+		//	@return: 	el número s en base 10
+		//	@throws:	Eleva la excepción InvalidParameter si s no es número rumano
 
 		public static int convierte(String s){
-			char Rom[]= {' ', 'I', 'V', 'X', 'L', 'C', 'D', 'M'};
-			int val[]= {0, 1, 5, 10, 50, 100, 500, 1000};
 			// charAt(int index) -> devuelve el carácter situado en la posición index pasada por parámetro
-			char letra=' ';
+			char letra= ' ';
 			int value = 0;
 			int suma = 0;
 			int ant = 0;
 
+			if(!romanAnalyzer(s)){
+				throw new InvalidParameterException("Número romano inexistente");
+			}
 			for(int y=0; y<s.length();y++) {
 				letra = s.charAt(y);
-				if(letra!='I' && letra!='V' && letra!='X' && letra!='L' && letra!='C' && letra!='D' && letra!='M') {
-					throw new InvalidParameterException("Número romano no existente");
-				}else {
-					for(int j=0;j<Rom.length;j++) {
-						if(letra==Rom[j]) {
-							value = val[j];
-							if(ant < val[j]){                     //si anterior menor al actual, resto el actual menos el ant
-		                    				  suma = value - ant ;
-		                        			ant = val[j];                	 // ant apunta al actual
-		                   			}else {
-		                        			ant = val[j];                    // si ant NO es menor al actual, todo normal
-		                        			suma = suma + value;
-		                   			}
-						}
+				for(int j=0;j<Rom.length;j++) {
+					if(letra==Rom[j]) {
+						value = val[j];
+						if(ant < value){             //si anterior menor al actual, resto el actual menos el ant
+      				suma = suma + (value - 2*ant);
+	           }else{												// si ant NO es menor al actual, todo normal
+	            suma = suma + value;
+	           }
+         		 ant = val[j];
+					 }
+				 }
+				}
+				return suma;
+			}
+
+			private static int posRom(char c){
+				for(int j=0;j<Rom.length;j++){
+					if(c==Rom[j]){
+						return j;
 					}
 				}
+				return -1;
 			}
-			return suma;
+
+			private static boolean romanAnalyzer(String s){
+				char c;
+				int pos, prevpos = -1;
+				int anterior = -1;
+				int count = 0;
+
+				for(int i = 0; i < s.length(); i++){
+					c = s.charAt(i);
+					pos = posRom(c);
+					if(pos == -1){
+						return false;
+					}
+					System.out.print(c);
+					if(i > 0){
+						if(prevpos%2 == 1 && prevpos<=pos){
+									return false;
+						}
+						if(anterior%2 == 1 && anterior == pos){
+									return false;
+						}
+						if(prevpos == pos){
+							if(++count >= 3){
+								return false;
+							}
+							if(anterior != -1 && anterior < pos){
+								return false;
+							}
+							anterior = prevpos;
+							prevpos = pos;
+							continue;
+						}else{
+							count = 0;
+						}
+						if(prevpos<pos && prevpos + 2 < pos){
+							return false;
+						}
+						if(prevpos<pos && anterior < pos && anterior != -1){
+							return false;
+						}
+						if(prevpos>=pos && anterior <= pos && anterior != -1){
+							return false;
+						}
+						if(prevpos>pos && anterior == pos){
+							return false;
+						}
+					}
+					anterior = prevpos;
+					prevpos = pos;
+			}
+			System.out.println("");
+			return true;
 		}
-
 		public static void main(String[] args) {
-			//System.out.println(convierte("V"));
-			//System.out.println(convierte("D"));
-			//System.out.println(convierte("XV"));
-			//System.out.println(convierte("MMXV"));
-			//System.out.println(convierte("IV"));
-			//System.out.println(convierte("IX"));
 			;
-
 		}
 	}
