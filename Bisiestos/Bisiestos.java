@@ -1,4 +1,4 @@
-import java.security.InvalidParameterException;
+package Bisiestos;
 
 public class Bisiestos {
 	// Devuelve True si año es bisiesto, false en caso contrario
@@ -6,7 +6,7 @@ public class Bisiestos {
 
 	public static boolean esBisiesto(int año) {
 		if(año==0 || año<0) {
-				throw new InvalidParameterException("invalid parameter");
+				throw new InvalidParameter();
 		}else {
 			if(año%4 == 0)
 				if(año%100 == 0)
