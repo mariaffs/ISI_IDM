@@ -1,0 +1,167 @@
+
+DANIEL RIVERA PANIAGUA
+MARIA FERNANDA FLORES SIMON
+-----------------------------------------------------------------------------------------------------
+
+1. Identifica el Software Under Test.
+
+2. Identifica los parámetros del SUT.
+
+3. Utilizando la técnica de la modelización de las entradas, crear caracterizaciones basadas en la funcionalidad y sus particiones en bloques.
+
+4. Elegir valores adecuados de cada bloque que satisfagan alguno de los criterios de cobertura "razonables" vistos en clase, prestando atención a los casos frontera que pueda haber en cada caso a la hora de elegir valores concretos para los test.
+
+5. Escribir el código de pruebas JUnit, antes de escribir el código SUT.
+
+6. Escribir el código del SUT y mejorarlo hasta que pase todas las pruebas.
+
+7. Utilizad los tests que habéis desarrollado para descubrir fallos en las implementaciones del SUT de otras parejas de compañeros. 
+
+----------------------------------------------BISIESTOS----------------------------------------------
+
+1. Identificar el Software Under Test
+
+	Programa de java esBisiestos con la siguiente especificación
+
+	//  @param  Año que queremos comprobar
+	//  @return True si año es bisiesto, false en caso contrario
+	//  @throws InvalidParameter si año no es un parámetro válido
+
+2. Identificar los parámetros del SUT
+
+	El único parámetro con el que tenemos que trabajar es con Año, que es un número entero. Si es mayor a 0, entonces es un año válido. Su dominio por tanto es todos los valores posibles de un integer
+
+3. Utilizando la técnica de la modelización de las entradas, crear caracterizaciones basadas en la funcionalidad, y sus particiones en bloques.
+
+	C1 -> ¿Es un año bisiesto?
+		c1.b1 -> True
+		c1.b2 -> False
+
+(Incluiremos también un test basado en la interfaz para probar si el parámetro que te introducen es válido o no)
+
+4. Elegir valores adecuados de cada bloque que satisfagan alguno de los criterios de cobertura “razonables” vistos en clase, prestando atención a los casos frontera que pueda haber en cada caso a la hora de elegir valores concretos para los tests.
+
+	c1.b1 -> año = 4 / 400
+	c1.b2 -> año = 100
+
+(Para probar mejor la aplicación lo haremos con varios valores límites problemáticos)
+
+5. 6. 7. Realizadas con BisiestosTests.java
+
+--------------------------------------------ROMANNUMERAL---------------------------------------------
+
+1. Identificar el Software Under Test
+
+	Programa de java esBisiestos con la siguiente especificación
+
+	//  @param  s es un número romano
+	//  @return el numero s en base 10
+	//  @throws InvalidParameter si as no es un número válido
+
+2. Identificar los parámetros del SUT
+
+	El único parámetro con el que tenemos que trabajar es con s, que es un string. Si es un número romano entonces es un parámetro válido. Su dominio por tanto es todos los valores que pueda tomar un número romano.
+
+3. Utilizando la técnica de la modelización de las entradas, crear caracterizaciones basadas en la funcionalidad, y sus particiones en bloques.
+
+	C1 -> ¿Qué numero es?
+		c1.b1 -> I - III
+        	c1.b2 -> IV
+        	c1.b3 -> V
+        	c1.b4 -> VI - VIII
+        	c1.b5 -> IX
+        	c1.b6 -> X
+        	c1.b7 -> XI - XXXIX
+        	c1.b8 -> XL - XLIX
+        	c1.b9 -> L - LIX
+        	c1.b10 -> LX - LXXXIX
+        	c1.b11 -> XC - XCIX
+        	c1.b12 -> C - CIX
+        	c1.b13 -> CX - CCCXCIX
+        	c1.b14 -> CD - CDXCIX
+        	c1.b15 -> D - DXCIX
+        	c1.b16 -> DC - DCCCXCIX
+        	c1.b17 -> CM - CMXCIX
+        	c1.b18 -> M - MXCIX
+        	c1.b19 -> MC - MMMCDXCIX
+
+(Incluiremos también un test basado en la interfaz para probar si el parámetro que te introducen es válido o no)
+
+4. Elegir valores adecuados de cada bloque que satisfagan alguno de los criterios de cobertura “razonables” vistos en clase, prestando atención a los casos frontera que pueda haber en cada caso a la hora de elegir valores concretos para los tests.
+
+	Usaremos para cada uno de los tests anteriores el mayor de los dos rangos por ser más complejo. Por ejemplo:
+
+	c1.b16 -> DCCCXCIX
+
+5. 6. 7. Realizadas con RomanNumeralTest.java
+
+--------------------------------------------EMBOTELLADORA---------------------------------------------
+
+1. Embotellar cantidad deseada con las botellas disponibles. Primero embotellar en las de 5L (grandes). Devuelve el número de botellas de 1L (pequenas) necesarias para embotellar el resto.
+
+public class Embotelladora{
+	//	@param 	pequenas: número de botellas en almacén de 1L
+	//	@param 	grandes: número de botellas en almacén de 5L
+	//	@param 	total: número total de litros que hay que embotellar
+	// 	@return	número de botellas pequeñas necesarias para embotellar el total de lı́quido, teniendo
+	//			en cuenta que hay que minimizar el número de botellas pequeñas: primero
+	//			se rellenan las grandes
+	// 	@throws	Eleva la excepción NoSolution si no es posible embotellar todo el lı́quido
+	
+	public int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution{
+
+
+2. int pequenas -> botellas de 1L disponibles
+   int grandes -> botellas de 5L disponibles
+   int total -> litros para embotellar
+
+3. C1 -> resto < pequenas, resto = pequenas o resto > pequenas ?
+	c1.b1 -> lo que me falta por embotellar es menor a las pequenas que tengo
+	c1.b2 -> lo que me falta por embotellar es igual a las pequenas que tengo
+	c1.b3 -> Exception -> lo que me falta por embotellar es mayor a las pequenas que tengo
+
+4. C1 ->
+	c1b3 -> (1, 5, 12) -> lo que tengo que embotellar es mayor al número de botellas de pequenas que tengo
+	c1b2 -> (2, 5, 12) -> lo que tengo que embotellar es igual al número de botellas pequenas que tengo
+	c1b1 -> (12, 5, 11) -> lo que tengo que embotellar es menor al número de botellas pequenas que tengo
+
+5. EmbotelladoraTest.java
+
+6. Embotelladora.java
+
+--------------------------------------------BLACK FRIDAY---------------------------------------------
+
+1. Si es 'BlackFriday', se aplica descuento al precio original y se devuelve el precio con el descuento. Si no es BlackFriday, se devuelve el precio original.
+
+public class DescuentoBlackFriday{
+	// 	@param	precioOriginal es el precio de un producto marcado en la etiqueta
+	//	@param	porcentajeDescuento es el descuento a aplicar expresado como un porcentaje
+	//	@return	el precio final teniendo en cuenta que si es black friday (29 de noviembre) se aplica
+	//			un descuento de porcentajeDescuento
+	// 	@throws	Eleva la excepción InvalidParameter si precioOriginal es negativo
+	
+	public double precioFinal (double precioOriginal, double porcentajeDescuento) throws InvalidParameterException{
+
+2. double precioOriginal -> precio del producto sin descuento
+   double porcentajeDescuento -> porcentaje aplicable en 'BlackFriday'
+
+3. C1 -> si el precio original es < 0
+	c1.b1 = true
+	c1.b2 = false
+
+   C2 -> si es 'BlackFriday'
+	c2.b1 = true
+	c2.b2 = false
+
+4. C1 ->
+	c1b2 -> (100,0.85) -> Precio válido, NO es menor que 0
+	c1b1 -> (-100,0.85) -> Exception -> Precio No válido, es menor que 0
+
+   C2 ->
+	c2b1 -> (100,0.85) -> valor esperado precio con descuento
+	c2b2 -> (100,0.85) -> valor esperado precio sin descuento
+
+5. DescuentoBlackFridayTest.java
+
+6. DescuentoBlackFriday.java
+
