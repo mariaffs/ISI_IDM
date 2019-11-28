@@ -1,7 +1,5 @@
 package RomanNumeral;
 
-import java.security.InvalidParameterException;
-
 public class RomanNumeral {
 		//Parámetro: s es un número romano
 		//Devuelve: el número s en base 10
@@ -19,7 +17,7 @@ public class RomanNumeral {
 			for(int y=0; y<s.length();y++) {
 				letra = s.charAt(y);
 				if(letra!='I' && letra!='V' && letra!='X' && letra!='L' && letra!='C' && letra!='D' && letra!='M') {
-					throw new InvalidParameterException("Número romano no existente");
+					throw new InvalidParameter();
 				}else {
 					for(int j=0;j<Rom.length;j++) {
 						if(letra==Rom[j]) {
