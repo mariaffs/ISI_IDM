@@ -1,4 +1,4 @@
-public class NoSolution extends RuntimeException{
+public class NoSolution extends Exception{
 
 	public NoSolution() {
 		super();
