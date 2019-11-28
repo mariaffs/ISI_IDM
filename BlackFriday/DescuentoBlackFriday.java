@@ -13,7 +13,7 @@ public class DescuentoBlackFriday{
 		if (precioOriginal < 0){
 			throw new InvalidParameter();
 		}else{
-			if(today.compareTo(blackFriday)!= 0) {
+			if(today.compareTo(blackFriday)== 0) {
 				return precioOriginal * (1-porcentajeDescuento);
 			}else {
 				return precioOriginal;
