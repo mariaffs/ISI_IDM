@@ -166,8 +166,8 @@ public class DescuentoBlackFriday{
 
 -----------------------------------------------------------------------------------------------------
 7. Hemos pasado nuestros Test al dos grupos:
- 	Daniel Arévalo, Ismaél González ();
-	Adrián Riao Monsalve, Javier Jesús Bravo ();
+ 	Daniel Arévalo, Ismaél González (https://github.com/ismagt/Practica_IDM_ISI);
+	Adrián Riao Monsalve, Javier Jesús Bravo (https://github.com/JavierBravoDonaire/Practica_ISI_IDM);
 
 	En ambos casos los tests pasaban modificando, en el caso del de Adrián y Javier el InvalidParameter por InvalidParameterException
 	Sin embargo, nuestros tests de los romanos no pasaban en ninguno de los dos casos.
