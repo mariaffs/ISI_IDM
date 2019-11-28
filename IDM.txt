@@ -1,6 +1,5 @@
-
-DANIEL RIVERA PANIAGUA
 MARIA FERNANDA FLORES SIMON
+DANIEL RIVERA PANIAGUA
 -----------------------------------------------------------------------------------------------------
 
 1. Identifica el Software Under Test.
@@ -15,7 +14,7 @@ MARIA FERNANDA FLORES SIMON
 
 6. Escribir el código del SUT y mejorarlo hasta que pase todas las pruebas.
 
-7. Utilizad los tests que habéis desarrollado para descubrir fallos en las implementaciones del SUT de otras parejas de compañeros. 
+7. Utilizad los tests que habéis desarrollado para descubrir fallos en las implementaciones del SUT de otras parejas de compañeros.
 
 ----------------------------------------------BISIESTOS----------------------------------------------
 
@@ -107,7 +106,7 @@ public class Embotelladora{
 	//			en cuenta que hay que minimizar el número de botellas pequeñas: primero
 	//			se rellenan las grandes
 	// 	@throws	Eleva la excepción NoSolution si no es posible embotellar todo el lı́quido
-	
+
 	public int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution{
 
 
@@ -139,7 +138,7 @@ public class DescuentoBlackFriday{
 	//	@return	el precio final teniendo en cuenta que si es black friday (29 de noviembre) se aplica
 	//			un descuento de porcentajeDescuento
 	// 	@throws	Eleva la excepción InvalidParameter si precioOriginal es negativo
-	
+
 	public double precioFinal (double precioOriginal, double porcentajeDescuento) throws InvalidParameterException{
 
 2. double precioOriginal -> precio del producto sin descuento
@@ -165,3 +164,12 @@ public class DescuentoBlackFriday{
 
 6. DescuentoBlackFriday.java
 
+-----------------------------------------------------------------------------------------------------
+7. Hemos pasado nuestros Test al dos grupos:
+ 	Daniel Arévalo, Ismaél González ();
+	Adrián Riao Monsalve, Javier Jesús Bravo ();
+
+	En ambos casos los tests pasaban modificando, en el caso del de Adrián y Javier el InvalidParameter por InvalidParameterException
+	Sin embargo, nuestros tests de los romanos no pasaban en ninguno de los dos casos.
+	Ambos equipos parecían tener problemas con números que contienen el 9 (39,59,339,899,3499)
+	y con algunas características de los propios números romanos, probados en nuestros test de interfaz.

@@ -1,4 +1,3 @@
-package DescuentoBlackFriday;
 import java.time.LocalDate;
 
 public class DescuentoBlackFriday{

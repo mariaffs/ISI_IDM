@@ -1,5 +1,3 @@
-package Embotelladora;
-
 public class Embotelladora{
 	//	@param 	pequenas: número de botellas en almacén de 1L
 	//	@param 	grandes: número de botellas en almacén de 5L

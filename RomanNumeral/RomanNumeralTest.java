@@ -17,31 +17,37 @@ public class RomanNumeralTest
       String str = "abc";
       RomanNumeral.convierte(str);
    }
+   //Cuatro seguidos
    @Test (expected = InvalidParameter.class) public void InvalidRomanNumber()
    {
       String str = "XXXX";
       RomanNumeral.convierte(str);
     }
+    //Letra de tipo 1 a la izquierda de 2 mayores
     @Test (expected = InvalidParameter.class) public void InvalidRomanNumber2()
     {
        String str = "XXXIXX";
        RomanNumeral.convierte(str);
      }
+     // Letra de tipo 1 a la izquierda de 2 mayores
      @Test (expected = InvalidParameter.class) public void InvalidRomanNumber3()
      {
         String str = "IXX";
         RomanNumeral.convierte(str);
       }
+      // Letra de tipo 1 restando y repetida a su izquierda
       @Test (expected = InvalidParameter.class) public void InvalidRomanNumber4()
       {
          String str = "IIV";
          RomanNumeral.convierte(str);
        }
+       // Letra restando y su repetición adyacente a la que resta
        @Test (expected = InvalidParameter.class) public void InvalidRomanNumber5()
        {
           String str = "IVI";
           RomanNumeral.convierte(str);
         }
+        // Repetición de letra de tipo 5
         @Test (expected = InvalidParameter.class) public void InvalidRomanNumber6()
         {
            String str = "LXL";
